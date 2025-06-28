@@ -10,33 +10,37 @@ export const menuItemsProps: HeaderProps['menuItems'] = [
     href: '/about',
   },
   {
-    title: 'Services',
-    subMenuItems: [
-      {
-        label: 'Service List',
-        href: '/services',
-      },
-      {
-        label: 'Service single',
-        href: '/services/single',
-      },
-    ],
+    label: 'Products',
+    href: '/services',
   },
+  // {
+  //   title: 'Services',
+  //   subMenuItems: [
+  //     {
+  //       label: 'Service List',
+  //       href: '/services',
+  //     },
+  //     {
+  //       label: 'Service single',
+  //       href: '/services/single',
+  //     },
+  //   ],
+  // },
+  // {
+  //   title: 'Products',
+  //   subMenuItems: [
+  //     {
+  //       label: 'Project List',
+  //       href: '/project',
+  //     },
+  //     {
+  //       label: 'Project single',
+  //       href: '/project/single',
+  //     },
+  //   ],
+  // },
   {
-    title: 'Products',
-    subMenuItems: [
-      {
-        label: 'Project List',
-        href: '/project',
-      },
-      {
-        label: 'Project single',
-        href: '/project/single',
-      },
-    ],
-  },
-  {
-    title: 'Solution',
+    title: 'Blog',
     subMenuItems: [
       {
         label: 'Blog List',
