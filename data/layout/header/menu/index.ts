@@ -7,12 +7,12 @@ export const menuItemsProps: HeaderProps['menuItems'] = [
   },
   {
     label: 'About',
-    href: '/about',
+    href: '#about-us',
   },
-  {
-    label: 'Products',
-    href: '/services',
-  },
+  // {
+  //   label: 'Products',
+  //   href: '/services',
+  // },
   // {
   //   title: 'Services',
   //   subMenuItems: [
@@ -26,35 +26,39 @@ export const menuItemsProps: HeaderProps['menuItems'] = [
   //     },
   //   ],
   // },
-  // {
-  //   title: 'Products',
-  //   subMenuItems: [
-  //     {
-  //       label: 'Project List',
-  //       href: '/project',
-  //     },
-  //     {
-  //       label: 'Project single',
-  //       href: '/project/single',
-  //     },
-  //   ],
-  // },
   {
-    title: 'Blog',
+    title: 'Products',
     subMenuItems: [
       {
-        label: 'Blog List',
-        href: '/blog',
+        label: 'Artificial Inteligent (AI)',
+        href: '/services',
       },
       {
-        label: 'Blog single',
-        href: '/blog/single',
+        label: 'Internet Of Things (IOT)',
+        href: '/iot',
+      },
+    ],
+  },
+  {
+    title: 'Solutions',
+    subMenuItems: [
+      {
+        label: 'Solutions 1',
+        href: '#',
+      },
+      {
+        label: 'Solutions 2',
+        href: '#',
       },
     ],
   },
 
   {
     label: 'Contact',
+    href: '/contact',
+  },
+  {
+    label: 'Request Support',
     href: '/contact',
   },
 ];

@@ -8,11 +8,6 @@ import {
 import { Carousel } from '@/src/components/carousel';
 import { CarouselItem } from '@/src/components/carousel/sub-components/item';
 import { testimonialSectionData } from '@/data/testimonial-section/v2';
-import { cn } from '@/src/utils/shadcn';
-
-const btnPrevNextClasses = cn(
-  'bg-primary-light/10 text-primary-light hover:text-white hover:bg-primary-light'
-);
 
 export interface TestimonialSectionProps {
   sectionHeading: SectionHeadingWithoutStylingProps;
@@ -21,12 +16,16 @@ export interface TestimonialSectionProps {
 
 export function TestimonialSection() {
   const { sectionHeading, cards } = testimonialSectionData;
+
   return (
     <section className="section-padding-primary overflow-hidden">
       <Container>
-        <div className="mb-10 mr-30px max-w-[680px] md:mb-[3.75rem] md:pr-[140px]">
-          <SectionHeading {...sectionHeading} />
+        <div className="mb-10 flex justify-center text-center md:mb-[3.75rem]">
+          <div className="max-w-[680px]">
+            <SectionHeading {...sectionHeading} />
+          </div>
         </div>
+
         {cards && cards.length > 0 && (
           <Carousel
             haveOffset={false}
@@ -46,9 +45,6 @@ export function TestimonialSection() {
               xl: 30,
               '2xl': 30,
             }}
-            hasNavigation
-            navigationPrevBtnClassName={btnPrevNextClasses}
-            navigationNextBtnClassName={btnPrevNextClasses}
           >
             {cards.map((card, index) => (
               <CarouselItem key={index}>

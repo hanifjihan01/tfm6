@@ -1,4 +1,4 @@
-import { Footer } from '@/src/layout/footer/v2';
+import { Footer } from '@/src/layout/footer/v1';
 import { MainHeader } from '@/src/layout/header';
 import { ContactSection } from '@/src/sections/contact/v2';
 import { HeroSection } from '@/src/sections/hero/v3';
@@ -13,16 +13,16 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <>
-      <MainHeader version="2" />
+      <MainHeader version="1" />
       <HeroSection
         title="Contact Us"
         breadcrumbItems={[
           {
-            label: 'Home',
+            label: 'Contact',
             href: '/',
           },
           {
-            label: 'Contact Us',
+            label: 'Request Support',
           },
         ]}
       />

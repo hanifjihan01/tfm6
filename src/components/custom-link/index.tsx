@@ -1,26 +1,26 @@
-import Link from 'next/link';
-import { LinkProps } from '@/src/common-types';
+import Link, { LinkProps as NextLinkProps } from 'next/link';
 import { AnchorHTMLAttributes, PropsWithChildren } from 'react';
 
-export type CustomLinkProps = Omit<LinkProps, 'label'> &
-  PropsWithChildren &
-  AnchorHTMLAttributes<HTMLAnchorElement>;
+export type CustomLinkProps = PropsWithChildren &
+  AnchorHTMLAttributes<HTMLAnchorElement> & {
+    href: NextLinkProps['href'];
+    openNewTab?: boolean;
+  };
 
-/**
- * Custom Link component which use nextjs `Link` component.
- *
- * **Note**:
- * We often need to wrap elements with a link. This is why we have decided
- * to use `children` instead of `label` with this component.
- */
 export function CustomLink({
   children,
   href,
   openNewTab,
+  className,
   ...props
 }: CustomLinkProps) {
   return (
-    <Link href={href} target={openNewTab ? '_blank' : '_self'} {...props}>
+    <Link
+      href={href}
+      target={openNewTab ? '_blank' : '_self'}
+      className={className}
+      {...props}
+    >
       {children}
     </Link>
   );

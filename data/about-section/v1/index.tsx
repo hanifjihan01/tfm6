@@ -58,10 +58,10 @@ export const aboutSectionData: AboutSectionProps = {
       height: 265,
     },
   },
-  sectionHeading: {
+  vissionMission: {
     subtitle: '',
     title: '',
-    description:
+    vision:
       'PT Transforme Indonesia is the leading provider of end-to-end information technology solution to business corporations in Indonesia. Our creative solution combines the leverage of cutting edge technology and business process reengineering expertise in exploiting opportunities to create values to maximize the profit of our clients.',
   },
 

@@ -20,69 +20,35 @@ export const footerSectionData: FooterSectionProps = {
     ],
   },
   columnOne: {
-    title: 'Information',
+    title: 'About',
     links: [
       {
-        label: 'Software Development',
+        label: 'Introducing',
         href: '/',
         openNewTab: false,
       },
       {
-        label: 'Data Analytics',
+        label: 'Terms of Services',
         href: '/',
         openNewTab: false,
       },
       {
-        label: 'IT Consulting',
-        href: '/',
-        openNewTab: false,
-      },
-      {
-        label: 'UI/UX Design',
-        href: '/',
-        openNewTab: false,
-      },
-      {
-        label: 'Network Solutions',
-        href: '/',
-        openNewTab: false,
-      },
-      {
-        label: 'Others',
+        label: 'Privacy Policy',
         href: '/',
         openNewTab: false,
       },
     ],
   },
   columnTwo: {
-    title: 'Address',
+    title: 'Contact',
     location:
       'Jl. Tanah Abang II No. 87C Cideng, Gambir Kota Administrasi Jakarta Pusat, DKI Jakarta, 10150 Indonesia ',
     mails: ['sales@transforme.co.id'],
     phoneNumbers: ['+62 21 3440513', '+62859 6633 0775'],
   },
   columnThree: {
-    title: 'Recent Blog',
-    blogs: [
-      {
-        image: {
-          src: '/assets/images/blog/blog-sm-1.jpg',
-          alt: 'We provide a range of IT solutions',
-        },
-        title: 'We provide a range of IT solutions',
-        date: 'June 25, 2025',
-        slug: './blog-details',
-      },
-      {
-        image: {
-          src: '/assets/images/blog/blog-sm-2.jpg',
-          alt: 'IT solutions enhance efficiency',
-        },
-        title: 'IT solutions enhance efficiency',
-        date: 'June 24, 2025',
-        slug: './blog-details',
-      },
-    ],
+    title: 'Newslater',
+    blogs: [],
   },
   footerBottom: {
     copyrightText: '© Transforme  2025 | All Rights Reserved',

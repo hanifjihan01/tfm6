@@ -6,22 +6,30 @@ export interface StatCardProps {
   value: number;
   counterSuffix: string;
 }
+import { cloneElement, isValidElement } from 'react';
 
 export function StatCard({ icon, title, value, counterSuffix }: StatCardProps) {
+  const styledIcon =
+    isValidElement(icon) && typeof icon.type !== 'string'
+      ? cloneElement(icon, {
+          className:
+            'text-[#4AC4F3] text-[1.875rem] group-hover:rotate-y-180 transition-all duration-500 group-hover:delay-100',
+        })
+      : icon;
+
   return (
-    <div className="group relative flex items-center">
-      <span className="relative z-1 inline-grid h-[50px] w-[50px] flex-none place-items-center rounded-5  bg-primary text-white">
-        <span className="text-[1.875rem] text-white [transition:all_500ms_ease] group-hover:[transform:rotateY(180deg)] group-hover:[transition-delay:.1s]">
-          {icon}
-        </span>
+    <div className="group flex flex-col items-center text-center">
+      <span className="mb-4 inline-grid h-[40px] w-[50px] place-items-center rounded-5 bg-gray-200 text-[#4AC4F3]">
+        {styledIcon}
       </span>
-      <div className="-ml-5 flex min-h-[120px] flex-1 flex-col justify-center  rounded-5 bg-accent-100 p-30px py-2.5 pl-10  dark:bg-accent-700">
-        <h3 className="font-secondary text-xl font-bold leading-[1.25] text-accent-900 dark:text-white md:text-2xl">
+      <h3 className="font-secondary text-xl font-bold leading-[1.25] md:text-2xl">
+        <span className="text-[#4AC4F3]">
           <Counter end={value} suffix={counterSuffix} />
-          <span className="sr-only">Counter</span>
-        </h3>
-        <p className="-mt-2.5">{title}</p>
-      </div>
+        </span>
+        <span className="sr-only">Counter</span>
+      </h3>
+
+      <p className="mt-1 text-accent-900 dark:text-white">{title}</p>
     </div>
   );
 }

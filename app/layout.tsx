@@ -2,7 +2,7 @@ import './globals.css';
 import { Metadata } from 'next';
 import { primary, secondary } from '@/fonts';
 import { AOSInit } from '@/src/utils/aos';
-import { ScrollToTopButton } from '@/src/components/scroll-to-top';
+
 import { cn } from '@/src/utils/shadcn';
 import { Toaster } from 'sonner';
 import { ThemeProvider } from '@/src/components/theme-provider';
@@ -50,7 +50,6 @@ export default async function RootLayout({ children }: Props) {
           closeButton
           visibleToasts={9}
         />
-        <ScrollToTopButton />
       </body>
     </html>
   );

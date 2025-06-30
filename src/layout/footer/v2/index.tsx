@@ -78,7 +78,7 @@ export function Footer({ className, footerTopClassName }: Props) {
   return (
     <footer
       className={cn(
-        'overflow-hidden bg-accent-100 text-accent-800 dark:bg-accent-700 dark:text-body',
+        'overflow-hidden bg-white text-accent-800 dark:bg-white dark:text-body',
         className
       )}
     >

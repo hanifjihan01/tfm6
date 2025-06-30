@@ -3,10 +3,13 @@ import { serviceSectionData } from '@/data/service-section/v1/home-page';
 import { Footer } from '@/src/layout/footer/v1';
 import { MainHeader } from '@/src/layout/header';
 import { AboutSection } from '@/src/sections/about/v1';
+import { StatisticsSection } from '@/src/sections/statistics/v2';
+import { ClientLogoDiamondGrid } from '@/src/components/sections/ClientLogoDiamondGrid';
 
 import { CtaSection } from '@/src/sections/cta/v1';
 import { Hero } from '@/src/sections/hero/v1';
 import { ProjectSection } from '@/src/sections/project/v1';
+import { TestimonialSection } from '@/src/sections/testimonial/v2';
 
 import { ServiceSection } from '@/src/sections/service/v1';
 
@@ -22,10 +25,20 @@ export default function Page() {
     <>
       <MainHeader version="1" />
       <Hero />
+      <div className="relative">
+        {/* Background biru di atas setengah tinggi */}
+        <div className="absolute left-0 top-0 z-0 h-2/3 w-full bg-[#4AC4F3]" />
+
+        {/* Konten di atas background */}
+        <div className="relative z-10">
+          <br />
+          <StatisticsSection />
+        </div>
+      </div>
       <ServiceSection className="!pb-0" {...serviceSectionData} />
       <AboutSection />
-      <CtaSection />
-      <ProjectSection {...projectSectionData} />
+      <TestimonialSection />
+      <ClientLogoDiamondGrid />
 
       <Footer />
     </>
