@@ -4,6 +4,26 @@ import { motion } from 'framer-motion';
 import { aboutSectionData } from '@/data/about-section/v1';
 import { Container } from '@/src/components/container';
 
+export interface AboutSectionProps {
+  images: {
+    [key: string]: {
+      src: string;
+      alt: string;
+      width: number;
+      height: number;
+    };
+  };
+  vissionMission?: {
+    subtitle?: string;
+    title?: string;
+    vision?: string;
+  };
+  visionMission?: {
+    vision?: string;
+  };
+  keyPoints: Array<Record<string, unknown>>;
+}
+
 export function AboutSection() {
   const { vissionMission, visionMission } = aboutSectionData;
 

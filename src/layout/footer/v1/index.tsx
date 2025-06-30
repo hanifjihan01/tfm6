@@ -3,15 +3,10 @@ import { ImageProps, LinkProps, SectionProps } from '@/src/common-types';
 import { Container } from '@/src/components/container';
 import { CustomLink } from '@/src/components/custom-link';
 import { cn } from '@/src/utils/shadcn';
-import Image from 'next/image';
+
 import { BrandLogo } from 'src/layout/brand-logo';
-import {
-  FaChevronRight,
-  FaEnvelope,
-  FaPaperPlane,
-  FaPhone,
-} from 'react-icons/fa6';
-import { FaCalendarDays } from 'react-icons/fa6';
+import { FaChevronRight } from 'react-icons/fa6';
+
 import { NewsletterForm } from '@/data/layout/footer/v1/NewsletterForm';
 
 interface RecentBlog {
@@ -51,15 +46,10 @@ export interface FooterSectionProps {
   };
 }
 
-const socialIconClasses = cn(
-  'text-base/[1.75] transition-transform duration-350 hover:-translate-y-1 block px-4'
-);
 const titleClasses = cn(
   'text-gray-900 dark:text-white  text-md font-bold  leading-[1.25] md:text-lg mb-5 md:mb-[1.875rem]'
 );
-const addressIconParentClasses = cn(
-  'w-10 h-10 rounded-5 inline-grid place-items-center dark:bg-accent-700 border border-accent-800 dark:border-transparent text-primary flex-none'
-);
+
 const addressItemClasses = cn('flex items-center gap-5');
 const textColor = cn(
   'transition-colors duration-300 hover:text-primary dark:hover:text-white'

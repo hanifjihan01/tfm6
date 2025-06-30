@@ -1,6 +1,5 @@
 'use client'; // Wajib jika pakai framer-motion di komponen ini
 
-import { Button } from '@/src/components/button';
 import { CustomLink } from '@/src/components/custom-link';
 import { cn } from '@/src/utils/shadcn';
 import { motion } from 'framer-motion';

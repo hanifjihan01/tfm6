@@ -1,8 +1,6 @@
-import { serviceSectionData } from '@/data/service-section/v1/service-list-page';
 import { Footer } from '@/src/layout/footer/v1';
 import { MainHeader } from '@/src/layout/header';
-import { HeroSection } from '@/src/sections/hero/v3';
-import { ServiceSection } from '@/src/sections/service/v1';
+
 import { Metadata } from 'next';
 import { HeroSections } from '@/src/components/heroSections/HeroSections';
 import { ArtificialIntelligent } from '@/src/components/artificialIntelligent/ArtificialIntelligent';

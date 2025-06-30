@@ -8,25 +8,35 @@ import SwiperCore, {
   Pagination,
   Autoplay,
 } from 'swiper';
-import { FaArrowLeftLong, FaArrowRightLong } from 'react-icons/fa6';
 
 import { heroData } from '@/data/hero/v1';
 import { Container } from '@/src/components/container';
 import { CustomLink } from '@/src/components/custom-link';
-import { cn } from '@/src/utils/shadcn';
+
+import type { Swiper as SwiperType } from 'swiper';
 
 import { motion } from 'framer-motion';
 import 'swiper/swiper-bundle.min.css';
 
 SwiperCore.use([EffectFade, Navigation, Pagination, Autoplay]);
+// src/sections/hero/v1.ts atau bisa di types/hero.ts
+export interface HeroProps {
+  items: {
+    image: {
+      src: string;
+      alt: string;
+    };
+    title: string;
+    button: {
+      label: string;
+      href: string;
+    };
+  }[];
+}
 
 export function Hero() {
-  const swiperRef = useRef<any>();
+  const swiperRef = useRef<SwiperType | null>(null);
   const { items } = heroData;
-
-  const navigationButtonCommonClasses = cn(
-    'w-[44px] h-[44px] grid place-items-center text-[1rem] bg-black hover:bg-accent-700 transition-all duration-300 text-white rounded-full'
-  );
 
   return (
     <section className="relative overflow-hidden bg-white pt-20">
@@ -129,6 +139,7 @@ export function Hero() {
               <FaArrowRightLong />
             </button>
           </div> */}
+          <div className="hidden" />
         </Container>
       </div>
     </section>

@@ -1,4 +1,3 @@
-import { projectSectionData } from '@/data/project-section/v1/home-page';
 import { serviceSectionData } from '@/data/service-section/v1/home-page';
 import { Footer } from '@/src/layout/footer/v1';
 import { MainHeader } from '@/src/layout/header';
@@ -6,9 +5,8 @@ import { AboutSection } from '@/src/sections/about/v1';
 import { StatisticsSection } from '@/src/sections/statistics/v2';
 import { ClientLogoDiamondGrid } from '@/src/components/sections/ClientLogoDiamondGrid';
 
-import { CtaSection } from '@/src/sections/cta/v1';
 import { Hero } from '@/src/sections/hero/v1';
-import { ProjectSection } from '@/src/sections/project/v1';
+
 import { TestimonialSection } from '@/src/sections/testimonial/v2';
 
 import { ServiceSection } from '@/src/sections/service/v1';
