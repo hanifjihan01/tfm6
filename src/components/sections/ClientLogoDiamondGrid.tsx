@@ -14,20 +14,14 @@ const clientLogos = [
 ];
 
 export function ClientLogoDiamondGrid() {
-  const rows = [
-    [0], // baris 0: tengah atas
-    [1, 2], // baris 1: kiri-kanan atas
-    [3, 4, 5], // baris tengah
-    [6, 7], // baris 3: kiri-kanan bawah
-    [8], // baris 4: tengah bawah
-  ];
+  const rows = [[0], [1, 2], [3, 4, 5], [6, 7], [8]];
 
   const rowOffsets = [
-    'ml-[7.5rem]', // baris 0
-    'ml-[4rem]', // baris 1
-    '', // baris 2
-    'ml-[4rem]', // baris 3
-    'ml-[7.5rem]', // baris 4
+    'md:ml-[7.5rem]', // Baris atas
+    'md:ml-[4rem]',
+    '',
+    'md:ml-[4rem]',
+    'md:ml-[7.5rem]',
   ];
 
   return (
@@ -39,7 +33,26 @@ export function ClientLogoDiamondGrid() {
         </p>
       </div>
 
-      <div className="flex flex-col items-center gap-4">
+      {/* MOBILE: grid satu kolom, DESKTOP: layout diamond */}
+      <div className="flex flex-col items-center gap-6 sm:gap-8 md:hidden">
+        {clientLogos.map((logo, index) => (
+          <div
+            key={index}
+            className="flex h-20 w-20 items-center justify-center rounded-lg bg-white shadow sm:h-24 sm:w-24"
+          >
+            <Image
+              src={logo}
+              alt={`Client ${index + 1}`}
+              width={64}
+              height={64}
+              className="object-contain"
+            />
+          </div>
+        ))}
+      </div>
+
+      {/* DESKTOP: only shown md and up */}
+      <div className="hidden md:flex md:flex-col md:items-center md:gap-6">
         {rows.map((row, rowIndex) => (
           <div key={rowIndex} className={`flex gap-16 ${rowOffsets[rowIndex]}`}>
             {row.map((logoIndex) => (

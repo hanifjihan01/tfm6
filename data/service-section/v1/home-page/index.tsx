@@ -239,13 +239,13 @@ export const serviceSectionData: ServiceSectionProps = {
       icon: <Icon1 />,
       title: 'Artificial Intelligence (AI)',
       description: ['- Face Recognition', '- Thermal Detection', ''],
-      slug: '/typeproductai',
+      slug: '/service',
     },
     {
       icon: <Icon2 />,
       title: 'Internet of Things (IoT) Solution',
       description: ['- Smart Community', '- Smart Sensor and Devices'],
-      slug: '/services/single',
+      slug: '/iot',
     },
     {
       icon: <Icon3 />,
