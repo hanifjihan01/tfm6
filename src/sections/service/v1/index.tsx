@@ -1,3 +1,9 @@
+'use client';
+
+import { useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
 import { Container } from '@/src/components/container';
 import { getStaggeredDelay } from '@/src/utils/set-staggered-delay';
 import { cn } from '@/src/utils/shadcn';
@@ -10,11 +16,30 @@ export interface ServiceSectionProps {
 }
 
 export function ServiceSection({ services, className }: ServiceSectionProps) {
+  useEffect(() => {
+    AOS.init({ once: true, duration: 800 });
+  }, []);
+
   return (
     <section className={cn('section-padding-primary', className)}>
       <Container>
+        {/* Title & Subtitle aligned to left */}
+        <div
+          className="mb-16 max-w-2xl space-y-1 text-left"
+          data-aos="fade-up"
+          data-aos-delay="100"
+        >
+          <h2 className="text-xl font-bold text-gray-900 sm:text-2xl md:text-3xl">
+            Our Approach
+          </h2>
+          <p className="text-sm text-gray-600 sm:text-base md:text-lg">
+            Lorem ipsum dolor sit amet consectetur. Orci mattis.
+          </p>
+        </div>
+
+        {/* Service Cards */}
         {services && services.length > 0 && (
-          <div className="-mx-4 flex flex-wrap justify-center gap-y-30px">
+          <div className="-mx-4 flex flex-wrap justify-center gap-y-8">
             {services.map((service, index) => (
               <div
                 key={index}

@@ -9,6 +9,7 @@ module.exports = {
     // We are using our custom container.
     container: false,
   },
+  safelist: ['max-w-[1603px]'],
   theme: {
     screens: {
       ...BREAKPOINTS,

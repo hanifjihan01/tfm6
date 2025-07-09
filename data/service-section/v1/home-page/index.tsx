@@ -239,7 +239,7 @@ export const serviceSectionData: ServiceSectionProps = {
       icon: <Icon1 />,
       title: 'Artificial Intelligence (AI)',
       description: ['- Face Recognition', '- Thermal Detection', ''],
-      slug: '/service',
+      slug: '/services',
     },
     {
       icon: <Icon2 />,

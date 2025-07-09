@@ -55,7 +55,7 @@ export const menuItemsProps: HeaderProps['menuItems'] = [
 
   {
     label: 'Contact',
-    href: '/contact',
+    href: '/#contact',
   },
   {
     label: 'Request Support',

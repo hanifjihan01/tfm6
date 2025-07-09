@@ -6,8 +6,8 @@ import { TestimonialSection } from '@/src/sections/testimonial/grid';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Techlab | Testimonial',
-  description: 'Techlab - IT Solutions and Services React Nextjs Template',
+  title: 'Transforme | Testimonial',
+  description: 'Transforme - IT Solutions and Services React Nextjs Template',
 };
 
 export default function Page() {

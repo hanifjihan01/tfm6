@@ -1,26 +1,21 @@
 'use client';
 
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import SwiperCore, {
-  EffectFade,
-  Navigation,
-  Pagination,
-  Autoplay,
-} from 'swiper';
-
+import SwiperCore, { Navigation, Pagination } from 'swiper';
 import { heroData } from '@/data/hero/v1';
-import { Container } from '@/src/components/container';
 import { CustomLink } from '@/src/components/custom-link';
-
-import type { Swiper as SwiperType } from 'swiper';
-
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { motion } from 'framer-motion';
-import 'swiper/swiper-bundle.min.css';
+import type { Swiper as SwiperClass } from 'swiper';
 
-SwiperCore.use([EffectFade, Navigation, Pagination, Autoplay]);
-// src/sections/hero/v1.ts atau bisa di types/hero.ts
-export interface HeroProps {
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+
+SwiperCore.use([Navigation, Pagination]);
+
+export type HeroProps = {
   items: {
     image: {
       src: string;
@@ -32,116 +27,203 @@ export interface HeroProps {
       href: string;
     };
   }[];
-}
+};
 
 export function Hero() {
-  const swiperRef = useRef<SwiperType | null>(null);
+  const swiperRef = useRef<SwiperClass | null>(null);
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [isBeginning, setIsBeginning] = useState(true);
+  const [isEnd, setIsEnd] = useState(false);
   const { items } = heroData;
+  const activeItem = items[activeIndex];
 
   return (
-    <section className="relative overflow-hidden bg-white pt-20">
-      {/* Judul Utama */}
-      <motion.div
-        initial={{ opacity: 0, y: -30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.1 }}
-        className="px-4 py-8 text-center"
-      >
-        <h2 className="text-xl font-bold leading-tight text-accent-900 md:text-2xl lg:text-3xl">
-          EMPOWERING DIGITAL LIFESTYLE <br />
-          <span className="text-accent-700">
-            WITH IOT SOLUTION & SMART SYSTEM
-          </span>
-        </h2>
-      </motion.div>
+    <section className="relative z-0 bg-white">
+      {/* Header "Most Products" */}
+      <div className="mx-auto w-full max-w-[1600px] px-4 pb-1 pt-10 text-center md:px-12 md:text-left lg:px-24">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: 'easeOut' }}
+          className="mb-2"
+        >
+          <h1 className="font-secondary text-base font-bold uppercase text-accent-900 sm:text-lg md:text-xl lg:text-2xl">
+            Most Products
+          </h1>
+        </motion.div>
+      </div>
 
-      <Swiper
-        effect="fade"
-        loop
-        speed={500}
-        autoplay={{ delay: 4000 }}
-        pagination={{ clickable: true }}
-        onBeforeInit={(swiper) => (swiperRef.current = swiper)}
-      >
-        {items.map((item, index) => (
-          <SwiperSlide key={index}>
+      {/* Bagian bawah dengan bg-sky-100 */}
+      <div className="flex w-full justify-center bg-white">
+        <div className="w-[1600px] bg-white px-4 py-10 md:px-12 lg:px-24">
+          {/* Judul Produk */}
+          <motion.h2
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: 'easeOut', delay: 0.1 }}
+            className="font-secondary text-sm font-semibold uppercase leading-tight text-accent-900 transition-all duration-500 sm:text-base md:text-lg lg:text-xl"
+          >
+            {activeItem?.title}
+          </motion.h2>
+
+          {/* Tombol Telusuri */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, ease: 'easeOut', delay: 0.1 }}
+          >
+            <CustomLink
+              href={activeItem?.button.href}
+              className="mt-2 inline-block rounded bg-[#4AC4F6] px-4 py-2 text-sm text-white transition-colors duration-300 hover:bg-[#007bbd] md:text-base"
+            >
+              Telusuri
+            </CustomLink>
+          </motion.div>
+
+          {/* Swiper Section */}
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: 'easeOut', delay: 0.3 }}
+            className="relative z-10 mt-6"
+          >
+            {/* Tombol Desktop di kanan atas */}
+            <div className="absolute -top-16 right-4 z-20 hidden gap-2 md:flex">
+              <button
+                onClick={() => swiperRef.current?.slidePrev()}
+                disabled={isBeginning}
+                className={`rounded-full border p-2 shadow transition-all duration-300 ${
+                  isBeginning
+                    ? 'cursor-not-allowed bg-gray-200'
+                    : 'bg-white hover:bg-gray-100'
+                }`}
+              >
+                <ChevronLeft size={20} />
+              </button>
+              <button
+                onClick={() => swiperRef.current?.slideNext()}
+                disabled={isEnd}
+                className={`rounded-full border p-2 shadow transition-all duration-300 ${
+                  isEnd
+                    ? 'cursor-not-allowed bg-gray-200'
+                    : 'bg-white hover:bg-gray-100'
+                }`}
+              >
+                <ChevronRight size={20} />
+              </button>
+            </div>
+
+            {/* Swiper */}
+            <Swiper
+              spaceBetween={20}
+              slidesPerView="auto"
+              centeredSlides={true}
+              onBeforeInit={(swiper) => {
+                swiperRef.current = swiper;
+                setIsBeginning(swiper.isBeginning);
+                setIsEnd(swiper.isEnd);
+              }}
+              onSlideChange={(swiper) => {
+                setActiveIndex(swiper.realIndex);
+                setIsBeginning(swiper.isBeginning);
+                setIsEnd(swiper.isEnd);
+              }}
+              pagination={false}
+              className="overflow-visible"
+            >
+              {items.map((item, index) => {
+                const isActive = index === activeIndex;
+                return (
+                  <SwiperSlide
+                    key={index}
+                    className="!w-[85%] sm:!w-[70%] md:!w-[50%] lg:!w-[33%]"
+                    onClick={() => {
+                      if (!isActive) swiperRef.current?.slideToLoop(index);
+                    }}
+                    style={{ cursor: !isActive ? 'pointer' : 'default' }}
+                  >
+                    <div
+                      className={`relative flex h-[280px] items-center justify-center rounded-xl p-4 transition-all duration-500 sm:h-[350px] md:h-[400px] ${
+                        isActive ? '' : 'opacity-60 blur-sm'
+                      }`}
+                      style={{ backgroundColor: 'transparent' }}
+                    >
+                      <img
+                        src={item.image.src}
+                        alt={item.image.alt}
+                        className="h-full w-auto object-contain"
+                      />
+                    </div>
+                  </SwiperSlide>
+                );
+              })}
+            </Swiper>
+          </motion.div>
+
+          {/* Tombol Mobile */}
+          <div className="relative z-10 mt-4 md:hidden">
             <motion.div
-              initial={{ opacity: 0, y: 50 }}
+              initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="relative flex flex-col items-center justify-center py-10"
+              className="flex justify-center gap-2"
             >
-              {/* Background Setengah Lingkaran */}
-              <div className="absolute bottom-0 left-1/2 z-0 h-[320px] w-[860px] -translate-x-1/2 rounded-t-full bg-[#4AC4F3]" />
-
-              {/* Kartu Putih */}
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.3 }}
-                className="relative z-20 flex min-h-[400px] w-full max-w-sm flex-col justify-between rounded-2xl bg-white px-6 py-8 text-center shadow-lg transition-all duration-300 hover:shadow-2xl"
+              <button
+                onClick={() => swiperRef.current?.slidePrev()}
+                disabled={isBeginning}
+                className={`rounded-full border p-2 shadow transition-all duration-300 ${
+                  isBeginning
+                    ? 'cursor-not-allowed bg-gray-200'
+                    : 'bg-white hover:bg-gray-100'
+                }`}
               >
-                {/* Dekorasi Lingkaran */}
-                <span className="absolute -left-8 top-[230px] z-10 h-20 w-20 rounded-full bg-purple-300" />
-                <span className="absolute -right-8 top-[6%] z-10 h-20 w-20 rounded-full bg-purple-700" />
-
-                {/* Gambar dalam lingkaran biru */}
-                <div className="flex justify-center">
-                  <div className="mx-auto -mt-14 mb-4 flex h-40 w-40 items-center justify-center rounded-full bg-[#059BEB]">
-                    <img
-                      src={item.image.src}
-                      alt={item.image.alt}
-                      className="h-36 w-36 object-contain"
-                    />
-                  </div>
-                </div>
-
-                {/* Judul dan Deskripsi */}
-                <div>
-                  <h3 className="mb-2 text-lg font-bold text-accent-900">
-                    {item.title}
-                  </h3>
-                  <p className="mb-4 line-clamp-3 text-sm text-gray-600">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Nunc odio in et.
-                  </p>
-                </div>
-
-                {/* Tombol */}
-                <CustomLink
-                  href={item.button.href}
-                  className="mx-auto mt-auto w-max rounded border border-[#059BEB] bg-[#059BEB] px-4 py-1.5 text-xs font-medium text-white transition-colors duration-300 hover:bg-white hover:text-[#059BEB]"
-                >
-                  More info
-                </CustomLink>
-              </motion.div>
+                <ChevronLeft size={20} />
+              </button>
+              <button
+                onClick={() => swiperRef.current?.slideNext()}
+                disabled={isEnd}
+                className={`rounded-full border p-2 shadow transition-all duration-300 ${
+                  isEnd
+                    ? 'cursor-not-allowed bg-gray-200'
+                    : 'bg-white hover:bg-gray-100'
+                }`}
+              >
+                <ChevronRight size={20} />
+              </button>
             </motion.div>
-          </SwiperSlide>
-        ))}
-      </Swiper>
+          </div>
 
-      {/* Tombol Navigasi */}
-      <div className="absolute right-0 top-[50%] z-50 hidden h-max w-full [transform:translateY(-50%)] lg:block">
-        <Container>
-          {/* <div className="ml-auto grid max-w-max gap-2.5 px-4">
-            <button
-              className={navigationButtonCommonClasses}
-              onClick={() => swiperRef.current?.slidePrev()}
-              aria-label="slide prev"
-            >
-              <FaArrowLeftLong />
-            </button>
-            <button
-              className={navigationButtonCommonClasses}
-              onClick={() => swiperRef.current?.slideNext()}
-              aria-label="slide next"
-            >
-              <FaArrowRightLong />
-            </button>
-          </div> */}
-          <div className="hidden" />
-        </Container>
+          {/* Progress Bar */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+            className="relative z-10 mt-6"
+          >
+            <div className="relative h-[4px] w-full overflow-hidden rounded bg-gray-200">
+              <div
+                className="absolute left-0 top-0 h-full bg-[#059BEB] transition-all duration-500"
+                style={{
+                  width: `${((activeIndex + 1) / items.length) * 100}%`,
+                }}
+              ></div>
+              <div className="absolute left-0 top-0 z-10 flex h-full w-full">
+                {items.map((_, index) => (
+                  <div
+                    key={index}
+                    onClick={() => swiperRef.current?.slideTo(index)}
+                    className="flex-1 cursor-pointer"
+                    title={`Slide ${index + 1}`}
+                  ></div>
+                ))}
+              </div>
+            </div>
+          </motion.div>
+        </div>
       </div>
+
+      {/* Setengah Lingkaran */}
+      <div className="pointer-events-none absolute bottom-0 left-1/2 z-0 h-[400px] w-[400px] -translate-x-1/2 translate-y-1/2 rounded-full bg-[#4AC4F6] md:h-[558px] md:w-[650px]"></div>
     </section>
   );
 }

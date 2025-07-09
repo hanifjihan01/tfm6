@@ -60,6 +60,7 @@ export function Footer({ className }: SectionProps) {
     footerSectionData;
   return (
     <footer
+      id="contact"
       className={cn(
         'overflow-hidden bg-white text-accent-800 dark:bg-accent-900 dark:text-body',
         className

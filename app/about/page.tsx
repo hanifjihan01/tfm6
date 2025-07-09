@@ -7,7 +7,7 @@ import { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Transforme Indonesia',
-  description: 'Techlab - IT Solutions and Services React Nextjs Template',
+  description: 'Transformasi - IT Solutions and Services React Nextjs Template',
 };
 
 export default function Page() {

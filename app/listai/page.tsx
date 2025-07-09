@@ -1,9 +1,8 @@
 import { Footer } from '@/src/layout/footer/v1';
 import { MainHeader } from '@/src/layout/header';
+import { Aboutlistai } from '@/src/components/aboutlistai/Aboutlistai';
 
 import { Metadata } from 'next';
-import { HeroSections } from '@/src/components/heroSections/HeroSections';
-import { ArtificialIntelligent } from '@/src/components/artificialIntelligent/ArtificialIntelligent';
 
 export const metadata: Metadata = {
   title: 'Transforme Indonesia',
@@ -13,18 +12,11 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <>
-      <div className="mb-16 ">
+      <div className="mb-40 ">
         <MainHeader version="1" />
       </div>
 
-      <div className="relative z-10 md:mb-[-180px]">
-        <HeroSections />
-      </div>
-
-      <div className="relative z-20 ">
-        <ArtificialIntelligent />
-      </div>
-
+      <Aboutlistai />
       <div className="mt-2">
         <Footer />
       </div>

@@ -1,3 +1,6 @@
+'use client';
+
+import { motion } from 'framer-motion';
 import { PersonProps, blurDataUrl } from '@/src/common-types';
 import Image from 'next/image';
 
@@ -12,9 +15,21 @@ export function TestimonialCard({
   speech,
 }: TestimonialCardProps) {
   return (
-    <div className="relative flex flex-col items-center overflow-visible">
+    <motion.div
+      className="relative flex flex-col items-center overflow-visible"
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, ease: 'easeOut' }}
+      viewport={{ once: true, amount: 0.2 }}
+    >
       {/* Card testimonial */}
-      <div className="relative z-10 w-full max-w-md rounded-2xl bg-[#4AC4F3] p-6 pb-24 pt-10 text-center shadow-md sm:p-10">
+      <motion.div
+        initial={{ scale: 0.95, opacity: 0 }}
+        whileInView={{ scale: 1, opacity: 1 }}
+        transition={{ delay: 0.2, duration: 0.6, ease: 'easeOut' }}
+        viewport={{ once: true }}
+        className="relative z-10 w-full max-w-md rounded-2xl bg-[#4AC4F3] p-6 pb-24 pt-10 text-center shadow-md sm:p-10"
+      >
         {/* Rating */}
         <div className="mb-6 text-white"></div>
 
@@ -36,11 +51,23 @@ export function TestimonialCard({
             <polygon points="0,0 30,30 60,0" fill="currentColor" />
           </svg>
         </div>
-      </div>
+      </motion.div>
 
       {/* Foto & info orang */}
-      <div className="mt-14 flex flex-col items-center text-center">
-        <div className="relative mb-4 h-20 w-20">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.4, duration: 0.6 }}
+        viewport={{ once: true }}
+        className="mt-14 flex flex-col items-center text-center"
+      >
+        <motion.div
+          className="relative mb-4 h-20 w-20"
+          initial={{ scale: 0.8, opacity: 0 }}
+          whileInView={{ scale: 1, opacity: 1 }}
+          transition={{ delay: 0.5, duration: 0.5 }}
+          viewport={{ once: true }}
+        >
           <Image
             src={image.src}
             alt={image.alt}
@@ -64,14 +91,14 @@ export function TestimonialCard({
               <path d="M22.985 12.8771C23.3761..." />
             </svg>
           </span>
-        </div>
+        </motion.div>
         <h3 className="text-md font-bold leading-tight text-accent-900 dark:text-white md:text-lg">
           {name}
         </h3>
         <p className="text-accent-600 mt-1 text-sm dark:text-accent-200">
           {about}
         </p>
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 }

@@ -10,6 +10,7 @@ import { Hero } from '@/src/sections/hero/v1';
 import { TestimonialSection } from '@/src/sections/testimonial/v2';
 
 import { ServiceSection } from '@/src/sections/service/v1';
+import { HeroBaru } from './heroBaru/HeroBaru';
 
 import { Metadata } from 'next';
 
@@ -22,10 +23,17 @@ export default function Page() {
   return (
     <>
       <MainHeader version="1" />
+
+      <div className="">
+        <HeroBaru />
+      </div>
+
       <Hero />
       <div className="relative">
         {/* Background biru di atas setengah tinggi */}
-        <div className="absolute left-0 top-0 z-0 h-2/3 w-full bg-[#4AC4F3]" />
+        <div className="absolute left-1/2 top-0 z-0 w-full max-w-[1603px] -translate-x-1/2">
+          <div className="h-[180px] bg-[#4AC4F6]" />
+        </div>
 
         {/* Konten di atas background */}
         <div className="relative z-10">
@@ -33,6 +41,7 @@ export default function Page() {
           <StatisticsSection />
         </div>
       </div>
+
       <ServiceSection className="!pb-0" {...serviceSectionData} />
       <AboutSection />
       <TestimonialSection />

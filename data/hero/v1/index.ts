@@ -6,10 +6,10 @@ export const heroData: HeroProps = {
   items: [
     {
       image: {
-        src: '/assets/images/project/gates.png',
+        src: '/assets/images/project/gatestestingcoba.png',
         alt: 'hero 1',
       },
-      title: 'Smart Turnstile with Thermal Face Recognition Camera',
+      title: 'E-Gate single MVCM-2108-J Z ',
       button: {
         label: 'Discover More',
         href: '/',
@@ -17,10 +17,10 @@ export const heroData: HeroProps = {
     },
     {
       image: {
-        src: '/assets/images/project/smartcamera.png',
+        src: '/assets/images/project/smartipcamera.png',
         alt: 'hero 2',
       },
-      title: 'Smart Camera AI 1S',
+      title: 'Smart IP Camera JVS-N537-SDL',
       button: {
         label: 'Discover More',
         href: '/',
@@ -28,10 +28,10 @@ export const heroData: HeroProps = {
     },
     {
       image: {
-        src: '/assets/images/project/motorized.png',
+        src: '/assets/images/project/xray.png',
         alt: 'hero 3',
       },
-      title: 'Motorized Conference LCD',
+      title: 'X-Ray',
       button: {
         label: 'Discover More',
         href: '/',
@@ -39,10 +39,10 @@ export const heroData: HeroProps = {
     },
     {
       image: {
-        src: '/assets/images/project/smartvendings.png',
+        src: '/assets/images/project/smarthelmet.png',
         alt: 'hero 4',
       },
-      title: 'Smart Vending Machine',
+      title: 'SMART HELMET',
       button: {
         label: 'Discover More',
         href: '/',

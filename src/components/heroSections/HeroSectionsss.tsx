@@ -16,13 +16,13 @@ const images: Record<string, string> = {
   security: '/assets/images/hero/logosmartcitys.png',
 };
 
-export function HeroSections() {
-  const [activeTab, setActiveTab] = useState('visitor');
+export function HeroSectionsss() {
+  const [activeTab, setActiveTab] = useState('security');
   const router = useRouter();
 
   const handleTabClick = (value: string) => {
-    if (value === 'security') {
-      router.replace('/smartsecurity');
+    if (value === 'visitor') {
+      router.replace('/services');
     } else {
       setActiveTab(value);
     }

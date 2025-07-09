@@ -7,7 +7,7 @@ import { HeroSectionss } from '@/src/components/heroSections/HeroSectionss';
 
 export const metadata: Metadata = {
   title: 'Transforme Indonesia',
-  description: 'Techlab - IT Solutions and Services React Nextjs Template',
+  description: 'Transforme - IT Solutions and Services React Nextjs Template',
 };
 
 export default function Page() {

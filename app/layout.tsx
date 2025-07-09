@@ -12,8 +12,8 @@ interface Props {
 }
 
 export const metadata: Metadata = {
-  title: 'Techlab',
-  description: 'Techlab - IT Solutions and Services React Nextjs Template',
+  title: 'Transforme',
+  description: 'Transforme - IT Solutions and Services React Nextjs Template',
 };
 
 export default async function RootLayout({ children }: Props) {
