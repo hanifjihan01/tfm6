@@ -19,14 +19,14 @@ export function HeroSection({ title, breadcrumbItems }: HeroSectionProps) {
   return (
     <section className="section-padding-primary relative flex min-h-[450px] items-center">
       {/* Background image  */}
-      <Image
+      {/* <Image
         priority
         src={bannerImage.src}
         alt={`${process.env.NEXT_PUBLIC_SITE_NAME} banner 3`}
         fill
         sizes="100vw"
         className="pointer-events-none object-cover"
-      />
+      /> */}
 
       {/* Overlay  */}
       <span className="absolute inset-0 bg-gradient-1 from-white/0 to-white dark:from-accent-900/0 dark:to-accent-900"></span>

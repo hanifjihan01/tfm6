@@ -31,9 +31,7 @@ export default function Page() {
       <Hero />
       <div className="relative">
         {/* Background biru di atas setengah tinggi */}
-        <div className="absolute left-1/2 top-0 z-0 w-full max-w-[1603px] -translate-x-1/2">
-          <div className="h-[180px] bg-[#4AC4F6]" />
-        </div>
+        <div className="absolute left-1/2 top-0 z-0 w-full max-w-[1603px] -translate-x-1/2"></div>
 
         {/* Konten di atas background */}
         <div className="relative z-10">

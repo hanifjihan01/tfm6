@@ -26,16 +26,16 @@ export function ArtificialIntelligent2() {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, ease: 'easeOut' }}
       viewport={{ once: true, amount: 0.3 }}
-      className="bg-white px-4 py-10 md:px-10"
+      className="bg-accent-900 px-4 py-10 md:px-10"
     >
       <div className="mx-auto flex max-w-7xl flex-col gap-10 md:grid md:grid-cols-2 md:items-center">
         {/* Left Side */}
         <div className="text-center md:text-left">
-          <h2 className="text-balance text-xl font-extrabold leading-tight text-gray-900 md:text-2xl lg:text-3xl">
+          <h2 className="text-balance text-xl font-extrabold leading-tight text-white md:text-2xl lg:text-3xl">
             Artificial Intelligent (AI)
           </h2>
 
-          <p className="mt-2 text-sm text-gray-600 md:text-base">
+          <p className="mt-2 text-sm text-white md:text-base">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc odio
             in et, lectus sit lorem id integer.
           </p>

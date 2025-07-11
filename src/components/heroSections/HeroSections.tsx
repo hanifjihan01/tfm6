@@ -29,19 +29,19 @@ export function HeroSections() {
   };
 
   return (
-    <section className="relative overflow-hidden bg-white pb-10 pt-12 text-center md:pb-20 md:pt-16">
+    <section className="relative overflow-hidden bg-accent-900 pb-10 pt-12 text-center md:pb-20 md:pt-16">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.5 }}
       >
         {/* Judul */}
-        <h1 className="md:text-5xl text-2xl font-extrabold text-gray-900">
+        <h1 className="md:text-5xl text-2xl font-extrabold text-[#4AC4F6]">
           My Smart Lifestyle
         </h1>
 
         {/* Subjudul */}
-        <p className="mt-2 text-xs text-gray-600 md:text-base">
+        <p className="mt-2 text-xs text-white md:text-base">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit.
           <br className="hidden sm:block" />
           Nunc odio in et, lectus sit lorem id integer.

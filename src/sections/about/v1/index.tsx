@@ -43,7 +43,7 @@ export function AboutSection() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.6, ease: 'easeOut' }}
-            className="w-full max-w-7xl rounded-xl border border-t-0 border-gray-300 bg-white p-8 text-center text-accent-900 shadow-[4px_4px_12px_rgba(0,0,0,0.05),-4px_4px_12px_rgba(0,0,0,0.05)] dark:text-white"
+            className="w-full max-w-7xl rounded-xl border border-t-0 border-gray-300 bg-accent-900 p-8 text-center text-accent-900 shadow-[4px_4px_12px_rgba(0,0,0,0.05),-4px_4px_12px_rgba(0,0,0,0.05)] dark:text-white"
           >
             {vissionMission?.vision && (
               <motion.div
@@ -53,7 +53,7 @@ export function AboutSection() {
                 transition={{ delay: 0.3, duration: 0.6 }}
                 className="mt-6"
               >
-                <h4 className="text-xl font-bold text-black">About Us</h4>
+                <h4 className="text-xl font-bold text-white">About Us</h4>
                 <motion.p
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -73,7 +73,7 @@ export function AboutSection() {
                 transition={{ delay: 0.7, duration: 0.6 }}
                 className="mt-6"
               >
-                <h4 className="text-xl font-bold text-black">
+                <h4 className="text-xl font-bold text-white">
                   Vision & Mission
                 </h4>
                 <motion.p

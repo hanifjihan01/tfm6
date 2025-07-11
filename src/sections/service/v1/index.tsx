@@ -29,7 +29,7 @@ export function ServiceSection({ services, className }: ServiceSectionProps) {
           data-aos="fade-up"
           data-aos-delay="100"
         >
-          <h2 className="text-xl font-bold text-gray-900 sm:text-2xl md:text-3xl">
+          <h2 className="text-xl font-bold text-white sm:text-2xl md:text-2xl">
             Our Approach
           </h2>
           <p className="text-sm text-gray-600 sm:text-base md:text-lg">

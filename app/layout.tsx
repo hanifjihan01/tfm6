@@ -2,18 +2,23 @@ import './globals.css';
 import { Metadata } from 'next';
 import { primary, secondary } from '@/fonts';
 import { AOSInit } from '@/src/utils/aos';
-
+import { ScrollToTopButton } from '@/src/components/scroll-to-top';
 import { cn } from '@/src/utils/shadcn';
 import { Toaster } from 'sonner';
 import { ThemeProvider } from '@/src/components/theme-provider';
+import { ModeToggle } from '@/src/components/mode-toggle';
 
 interface Props {
   children: React.ReactNode;
 }
 
 export const metadata: Metadata = {
-  title: 'Transforme',
-  description: 'Transforme - IT Solutions and Services React Nextjs Template',
+  title: 'Transforme Indonesia',
+  description:
+    'Transforme Indonesia - IT Solutions and Services React Nextjs Template',
+  icons: {
+    icon: '/favicon.ico',
+  },
 };
 
 export default async function RootLayout({ children }: Props) {
@@ -32,7 +37,7 @@ export default async function RootLayout({ children }: Props) {
       <body>
         <ThemeProvider
           attribute="class"
-          defaultTheme="light"
+          defaultTheme="dark"
           enableSystem
           disableTransitionOnChange
         >
@@ -42,6 +47,7 @@ export default async function RootLayout({ children }: Props) {
             )}
           >
             <main>{children}</main>
+            {/* <ModeToggle /> */}
           </div>
         </ThemeProvider>
         <Toaster
@@ -50,6 +56,7 @@ export default async function RootLayout({ children }: Props) {
           closeButton
           visibleToasts={9}
         />
+        <ScrollToTopButton />
       </body>
     </html>
   );

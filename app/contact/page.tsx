@@ -13,8 +13,10 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <>
-      <MainHeader version="1" />
-      <HeroSection
+      <div className="mb-28">
+        <MainHeader version="1" />
+      </div>
+      {/* <HeroSection
         title="Contact Us"
         breadcrumbItems={[
           {
@@ -25,7 +27,7 @@ export default function Page() {
             label: 'Request Support',
           },
         ]}
-      />
+      /> */}
       <ContactSection />
       <MapSection />
       <Footer />

@@ -17,7 +17,7 @@ export function StatisticsSection({ className }: SectionProps) {
     <section className={cn(className)}>
       <Container>
         {statistics && statistics.length > 0 && (
-          <div className="rounded-xl bg-white p-6 shadow-lg dark:bg-accent-700">
+          <div className="rounded-xl p-6 shadow-lg dark:bg-white ">
             <div className="flex flex-wrap justify-between gap-y-6">
               {statistics.map((stat, index) => (
                 <div key={index} className="min-w-[200px] flex-1">

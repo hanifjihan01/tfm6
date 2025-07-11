@@ -6,6 +6,7 @@ import { HeroSections } from '@/src/components/heroSections/HeroSections';
 import { ArtificialIntelligent } from '@/src/components/artificialIntelligent/ArtificialIntelligent';
 import { LatestCollectionai } from '@/src/components/latestcollectionai/LatestCollectionai';
 
+import { BoomGateDetail } from '@/src/components/allproductsdetail/boomgatedetail';
 export const metadata: Metadata = {
   title: 'Transforme Indonesia',
   description: 'Transforme - IT Solutions and Services React Nextjs Template',
@@ -19,16 +20,13 @@ export default function Page() {
       </div>
 
       <div className="relative z-10 md:mb-[-180px]">
-        <HeroSections />
+        <BoomGateDetail />
       </div>
-
-      <div className="relative z-20 ">
+      <div className="mt-32">
         <ArtificialIntelligent />
       </div>
 
-      <LatestCollectionai />
-
-      <div className="mt-2">
+      <div className="mt-32">
         <Footer />
       </div>
     </>

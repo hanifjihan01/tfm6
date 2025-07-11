@@ -5,6 +5,8 @@ import { Metadata } from 'next';
 import { HeroSections } from '@/src/components/heroSections/HeroSections';
 import { ArtificialIntelligent } from '@/src/components/artificialIntelligent/ArtificialIntelligent';
 import { LatestCollectionai } from '@/src/components/latestcollectionai/LatestCollectionai';
+import { FaceRecogDetail } from '@/src/components/allproductsdetail/facerecogdetail';
+import { EGateDetail } from '@/src/components/allproductsdetail/egatedetail';
 
 export const metadata: Metadata = {
   title: 'Transforme Indonesia',
@@ -19,16 +21,13 @@ export default function Page() {
       </div>
 
       <div className="relative z-10 md:mb-[-180px]">
-        <HeroSections />
+        <EGateDetail />
       </div>
-
-      <div className="relative z-20 ">
+      <div className="mt-32">
         <ArtificialIntelligent />
       </div>
 
-      <LatestCollectionai />
-
-      <div className="mt-2">
+      <div className="mt-32">
         <Footer />
       </div>
     </>

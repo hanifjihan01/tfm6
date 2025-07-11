@@ -4,6 +4,7 @@ import { Metadata } from 'next';
 
 import { Iot } from '@/src/components/iot/Iot';
 import { HeroSectionss } from '@/src/components/heroSections/HeroSectionss';
+import { LatestCollectioniot } from '@/src/components/latestcollectioniot/LatestCollectioniot';
 
 export const metadata: Metadata = {
   title: 'Transforme Indonesia',
@@ -17,10 +18,19 @@ export default function Page() {
         <MainHeader version="1" />
       </div>
 
-      <HeroSectionss />
-      <Iot />
+      <div className="relative z-10 md:mb-[-180px]">
+        <HeroSectionss />
+      </div>
 
-      <Footer />
+      <div className="relative z-20 ">
+        <Iot />
+      </div>
+
+      <LatestCollectioniot />
+
+      <div className="mt-2">
+        <Footer />
+      </div>
     </>
   );
 }

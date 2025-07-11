@@ -1,10 +1,10 @@
 import { Footer } from '@/src/layout/footer/v1';
 import { MainHeader } from '@/src/layout/header';
-import { Metadata } from 'next';
-import { LatestCollectionai2 } from '@/src/components/latestcollectionai/LatestCollectionai2';
 
-import { HeroSectionsss } from '@/src/components/heroSections/HeroSectionsss';
-import { ArtificialIntelligent2 } from '@/src/components/artificialintelligent2/Artificialintelligent2';
+import { Metadata } from 'next';
+
+import { ArtificialIntelligent } from '@/src/components/artificialIntelligent/ArtificialIntelligent';
+import { Camera2Detail } from '@/src/components/allproductsdetail/camera2detail';
 
 export const metadata: Metadata = {
   title: 'Transforme Indonesia',
@@ -14,21 +14,18 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <>
-      <div className="mb-16">
+      <div className="mb-16 ">
         <MainHeader version="1" />
       </div>
 
       <div className="relative z-10 md:mb-[-180px]">
-        <HeroSectionsss />
+        <Camera2Detail />
+      </div>
+      <div className="mt-32">
+        <ArtificialIntelligent />
       </div>
 
-      <div className="relative z-20 ">
-        <ArtificialIntelligent2 />
-      </div>
-
-      <LatestCollectionai2 />
-
-      <div className="mt-2">
+      <div className="mt-32">
         <Footer />
       </div>
     </>
