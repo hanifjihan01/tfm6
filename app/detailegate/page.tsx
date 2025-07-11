@@ -2,10 +2,9 @@ import { Footer } from '@/src/layout/footer/v1';
 import { MainHeader } from '@/src/layout/header';
 
 import { Metadata } from 'next';
-import { HeroSections } from '@/src/components/heroSections/HeroSections';
+
 import { ArtificialIntelligent } from '@/src/components/artificialIntelligent/ArtificialIntelligent';
-import { LatestCollectionai } from '@/src/components/latestcollectionai/LatestCollectionai';
-import { FaceRecogDetail } from '@/src/components/allproductsdetail/facerecogdetail';
+
 import { EGateDetail } from '@/src/components/allproductsdetail/egatedetail';
 
 export const metadata: Metadata = {

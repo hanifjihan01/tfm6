@@ -1,9 +1,8 @@
 import { Container } from '@/src/components/container';
 import { CustomLink } from '@/src/components/custom-link';
 import { cn } from '@/src/utils/shadcn';
-import Image from 'next/image';
+
 import React from 'react';
-import bannerImage from 'public/assets/images/hero/globes.jpeg';
 
 interface BreadcrumbItem {
   href?: string;

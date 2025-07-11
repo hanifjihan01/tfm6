@@ -6,7 +6,6 @@ import { ScrollToTopButton } from '@/src/components/scroll-to-top';
 import { cn } from '@/src/utils/shadcn';
 import { Toaster } from 'sonner';
 import { ThemeProvider } from '@/src/components/theme-provider';
-import { ModeToggle } from '@/src/components/mode-toggle';
 
 interface Props {
   children: React.ReactNode;

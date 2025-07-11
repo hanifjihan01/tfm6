@@ -15,6 +15,22 @@ import 'swiper/css/pagination';
 
 SwiperCore.use([Navigation, Pagination]);
 
+// Tambahkan di atas atau bawah file index.tsx di hero/v1
+
+export interface HeroProps {
+  items: {
+    image: {
+      src: string;
+      alt: string;
+    };
+    title: string;
+    button: {
+      label: string;
+      href: string;
+    };
+  }[];
+}
+
 export function Hero() {
   const swiperRef = useRef<SwiperClass | null>(null);
   const [activeIndex, setActiveIndex] = useState(0);

@@ -2,9 +2,8 @@ import { Footer } from '@/src/layout/footer/v1';
 import { MainHeader } from '@/src/layout/header';
 
 import { Metadata } from 'next';
-import { HeroSections } from '@/src/components/heroSections/HeroSections';
+
 import { ArtificialIntelligent } from '@/src/components/artificialIntelligent/ArtificialIntelligent';
-import { LatestCollectionai } from '@/src/components/latestcollectionai/LatestCollectionai';
 
 import { BoomGateDetail } from '@/src/components/allproductsdetail/boomgatedetail';
 export const metadata: Metadata = {
