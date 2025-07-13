@@ -39,19 +39,19 @@ export const menuItemsProps: HeaderProps['menuItems'] = [
       },
     ],
   },
-  {
-    title: 'Solutions',
-    subMenuItems: [
-      {
-        label: 'Solutions 1',
-        href: '#',
-      },
-      {
-        label: 'Solutions 2',
-        href: '#',
-      },
-    ],
-  },
+  // {
+  //   title: 'Solutions',
+  //   subMenuItems: [
+  //     {
+  //       label: 'Solutions 1',
+  //       href: '#',
+  //     },
+  //     {
+  //       label: 'Solutions 2',
+  //       href: '#',
+  //     },
+  //   ],
+  // },
 
   {
     label: 'Contact',

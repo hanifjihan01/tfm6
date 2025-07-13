@@ -33,19 +33,22 @@ export function Header() {
       )}
     >
       <Container>
-        <div className="flex items-center justify-between gap-x-10">
-          {/* Brand logo  */}
+        <div className="flex items-center gap-x-10">
+          {/* Brand logo */}
           <div className="flex-none">
             <BrandLogo />
           </div>
 
-          {/* Navigation  */}
-          {menuItems && menuItems.length > 0 && (
-            <Navigation menuItems={menuItems} />
-          )}
+          {/* Spacer to push nav and contact to the right */}
+          <div className="ml-auto flex items-center gap-x-10">
+            {/* Navigation */}
+            {menuItems && menuItems.length > 0 && (
+              <Navigation menuItems={menuItems} />
+            )}
 
-          {/* Contact box  */}
-          <ContactBox {...contactInfo} />
+            {/* Contact box */}
+            <ContactBox {...contactInfo} />
+          </div>
         </div>
       </Container>
     </header>

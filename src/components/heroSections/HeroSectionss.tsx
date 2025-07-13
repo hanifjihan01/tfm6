@@ -22,7 +22,7 @@ export function HeroSectionss() {
 
   const handleTabClick = (value: string) => {
     if (value === 'security') {
-      router.replace('/smartsecurity');
+      router.replace('/iot2');
     } else {
       setActiveTab(value);
     }

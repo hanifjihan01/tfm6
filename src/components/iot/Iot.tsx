@@ -18,7 +18,7 @@ export function Iot() {
 
   const images = [
     '/assets/images/project/motorized.png',
-    '/assets/images/project/smarttv.png',
+    '/assets/images/project/wideangleconference.png',
     '/assets/images/project/smartprojector.png',
   ];
 
