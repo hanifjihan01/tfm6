@@ -14,7 +14,7 @@ export function MiniDetail() {
         className="mx-auto max-w-2xl md:max-w-6xl"
       >
         <h1 className="md:text-6xl text-3xl font-semibold leading-tight text-white sm:text-4xl">
-          Tab 8"Allocube
+          Tab 8 Allocube
           <br />
           iplay 50 mini li
         </h1>

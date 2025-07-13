@@ -51,7 +51,7 @@ export function CameraJVSZDLDetail() {
           </button>
         </div>
         <p className="text-sm leading-relaxed text-gray-300 sm:text-base">
-          Kamera ini menggunakan sensor CMOS 1/3" dengan resolusi maksimal 8MP
+          Kamera ini menggunakan sensor CMOS 1/3 dengan resolusi maksimal 8MP
           (3840x2160) dan mendukung kompresi video H.264/H.265+. Mendukung tiga
           stream dengan frame rate hingga 30fps dan bitrate hingga 4096Kbps.
           Dilengkapi lensa motorized varifocal 2.7–13.5mm dengan sudut pandang

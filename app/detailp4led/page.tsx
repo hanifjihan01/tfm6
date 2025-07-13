@@ -5,7 +5,6 @@ import { Metadata } from 'next';
 
 import { Iot } from '@/src/components/iot/Iot';
 
-import { NasStorageDetail } from '@/src/components/allproductsiot/nasstoragedetail';
 import { P4LedDetail } from '@/src/components/allproductsiot/p4leddetail';
 
 export const metadata: Metadata = {

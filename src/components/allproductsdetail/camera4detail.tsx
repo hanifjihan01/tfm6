@@ -52,7 +52,7 @@ export function Camera4Detail() {
           </button>
         </div>
         <p className="text-sm leading-relaxed text-gray-300 sm:text-base">
-          Kamera keamanan ini dilengkapi sensor 1/3" CMOS 5MP dengan resolusi
+          Kamera keamanan ini dilengkapi sensor 1/3 CMOS 5MP dengan resolusi
           maksimal 2560x1792 dan lensa 2.8mm yang memberikan sudut pandang lebar
           (H 96°). Mampu merekam pada 25fps dengan kompresi H.264/H.265, serta
           dilengkapi audio dua arah melalui mic dan speaker bawaan. Kamera ini
