@@ -1,4 +1,4 @@
-# Transforme | IT Solutions And Services Nextjs Template
+# Transforme | IT Solutions And Services
 
 #### Commit Prefixes
 
