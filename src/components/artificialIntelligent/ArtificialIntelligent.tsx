@@ -42,7 +42,7 @@ export function ArtificialIntelligent() {
             in et, lectus sit lorem id integer.
           </p>
 
-          <div className="mt-6 flex flex-wrap justify-center gap-4 md:justify-start">
+          <div className="mt-6 flex flex-col items-center gap-y-6 md:flex-row md:flex-wrap md:items-start md:justify-start md:gap-4">
             {cards.map((card, idx) => (
               <div
                 key={idx}
