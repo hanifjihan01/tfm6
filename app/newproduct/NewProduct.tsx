@@ -31,16 +31,16 @@ const productData = [
 
 export function NewProducts() {
   return (
-    <section className="py-16">
+    <section className="bg-white py-16">
       {/* Heading */}
       <div className="mb-12 text-center">
-        <h2 className="text-2xl font-bold text-gray-900 md:text-3xl">
+        <h2 className="text-2xl font-bold text-accent-900 md:text-3xl">
           New Products
         </h2>
-        <p className="mt-2 text-sm text-gray-500 md:text-base">
+        <p className="mt-2 text-sm text-accent-700 md:text-base">
           New innovation, best quality than before.
         </p>
-        <p className="mt-1 text-sm text-gray-400 md:text-base">
+        <p className="mt-1 text-sm text-accent-700 md:text-base">
           Make every moment flying operation become unforgettable.
         </p>
       </div>
@@ -68,7 +68,7 @@ export function NewProducts() {
                 <h3 className="text-lg font-bold text-gray-900 md:text-xl">
                   {item.title}
                 </h3>
-                <p className="mt-3 text-sm text-gray-600 md:text-base">
+                <p className="mt-3 text-sm text-gray-700 md:text-base">
                   {item.description}
                 </p>
               </div>
