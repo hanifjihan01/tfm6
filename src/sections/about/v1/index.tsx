@@ -32,7 +32,7 @@ export function AboutSection() {
   return (
     <section
       id="about-us"
-      className="section-padding-primary ] overflow-hidden" // biru muda
+      className="section-padding-primary overflow-hidden bg-white"
     >
       <Container>
         <div className="mx-auto w-full max-w-7xl">
