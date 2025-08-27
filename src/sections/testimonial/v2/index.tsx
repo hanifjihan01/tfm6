@@ -20,7 +20,7 @@ export function TestimonialSection() {
   return (
     <section className="section-padding-primary overflow-hidden">
       <Container>
-        <div className="mb-10 flex justify-center text-center md:mb-[3.75rem]">
+        <div className="mb-10 flex  text-center md:mb-[3.75rem]">
           <div className="max-w-[680px]">
             <SectionHeading {...sectionHeading} />
           </div>

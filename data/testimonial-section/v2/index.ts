@@ -2,87 +2,45 @@ import { TestimonialSectionProps } from '@/src/sections/testimonial/v2';
 
 export const testimonialSectionData: TestimonialSectionProps = {
   sectionHeading: {
-    title: 'Our Clients Speak',
-    subtitle: 'We have been working with clients around the world',
+    title: 'What Our "Pilots <br />Are Saying ',
+    subtitle: '',
   },
   cards: [
     {
       person: {
         image: {
-          src: '/assets/images/testimonial/person-3.png',
+          src: '/assets/images/testimonial/person1.png',
           alt: 'Esther Howard',
         },
-        name: 'Esther Howard',
-        about: 'IT Auditing',
+        name: 'Hugo Adams',
+        about: 'Content Creator',
       },
       speech:
-        'With a commitment to driving technological evolution, our IT solutions and services are the cornerstone of your digital',
-      rating: 5,
+        ' With high resolution camera, picture become clear and beautiful. Its so easy to operate drone.',
     },
     {
       person: {
         image: {
-          src: '/assets/images/testimonial/person-4.png',
-          alt: 'Leslie Alexander',
+          src: '/assets/images/testimonial/person2.png',
+          alt: 'Jennie Obrien',
         },
-        name: 'Leslie Alexander',
-        about: 'CRM Integration',
+        name: 'Jennie Obrien',
+        about: 'Diretor Film',
       },
       speech:
-        'With a commitment to driving technological evolution, our IT solutions and services are the cornerstone of your digital',
-      rating: 4,
+        'Taking high view video become easy and faster. Battery performance really helping for making film.',
     },
     {
       person: {
         image: {
-          src: '/assets/images/testimonial/person-5.png',
-          alt: 'Kristin Watson',
+          src: '/assets/images/testimonial/person3.png',
+          alt: 'Lisa Millz',
         },
-        name: 'Kristin Watson',
-        about: 'President of Sales',
+        name: 'Lisa Millz',
+        about: 'Content WQCreator',
       },
       speech:
-        'With a commitment to driving technological evolution, our IT solutions and services are the cornerstone of your digital',
-      rating: 5,
-    },
-    {
-      person: {
-        image: {
-          src: '/assets/images/testimonial/person-4.png',
-          alt: 'Leslie Alexander',
-        },
-        name: 'Leslie Alexander',
-        about: 'CRM Integration',
-      },
-      speech:
-        'With a commitment to driving technological evolution, our IT solutions and services are the cornerstone of your digital',
-      rating: 4,
-    },
-    {
-      person: {
-        image: {
-          src: '/assets/images/testimonial/person-5.png',
-          alt: 'Kristin Watson',
-        },
-        name: 'Kristin Watson',
-        about: 'President of Sales',
-      },
-      speech:
-        'With a commitment to driving technological evolution, our IT solutions and services are the cornerstone of your digital',
-      rating: 5,
-    },
-    {
-      person: {
-        image: {
-          src: '/assets/images/testimonial/person-4.png',
-          alt: 'Leslie Alexander',
-        },
-        name: 'Leslie Alexander',
-        about: 'CRM Integration',
-      },
-      speech:
-        'With a commitment to driving technological evolution, our IT solutions and services are the cornerstone of your digital',
-      rating: 4,
+        'Making video content for my trip vlog so powerful and wonderful. Love the video quality.',
     },
   ],
 };

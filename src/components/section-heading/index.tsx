@@ -25,9 +25,11 @@ export function SectionHeading({
 
   return (
     <div className={wrapperClasses}>
-      <h2 className="text-center font-secondary text-xl font-bold leading-[1.25] text-accent-900 dark:text-white md:text-2xl">
-        {title}
-      </h2>
+      <h2
+        className="text-left font-secondary text-xl font-bold leading-[1.25] text-accent-900 dark:text-white md:text-3xl"
+        dangerouslySetInnerHTML={{ __html: title }}
+      />
+
       {subtitle && (
         <span className="mt-[.625rem] block text-center font-secondary text-base font-bold uppercase leading-[1.5] tracking-widest text-gray-500 md:text-md">
           {subtitle}

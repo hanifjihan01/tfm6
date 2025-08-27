@@ -11,18 +11,25 @@ import { cn } from '@/src/utils/shadcn';
 import styles from './hero.module.css';
 import type { Swiper as SwiperType } from 'swiper';
 
+import { BrandLogo } from '@/src/layout/brand-logo';
+
+import { ContactBox } from '@/src/layout/header/desktop/v1/contact-box';
+
+import { Navigation as MainNavigation } from '@/src/layout/header/desktop/common/navigation';
+import { headerData } from 'data/layout/header/v1';
+
 SwiperCore.use([EffectFade, Navigation]);
 
 const heroData = {
   items: [
     {
       image: {
-        src: '/assets/images/hero/maps.png',
+        src: '/assets/images/hero/hero2.jpg',
         alt: 'hero image 1',
       },
-      title: 'EMPOWERING DIGITAL LIFESTYLE WITH IOT SOLUTION & SMART SYSTEM',
+      title: 'Transforme Indonesia',
       button: {
-        label: 'More',
+        label: 'More Info',
         href: '/#about-us',
       },
     },
@@ -32,9 +39,31 @@ const heroData = {
 export function HeroBaru() {
   const swiperRef = useRef<SwiperType>();
   const { items } = heroData;
+  const { menuItems, contactInfo } = headerData;
 
   return (
     <section className={styles['hero']}>
+      {/* HEADER dipindah ke Hero */}
+      <header className="absolute left-0 right-0 top-0 z-50 w-full bg-transparent py-[10px]">
+        <Container>
+          <div className="flex items-center gap-x-10 bg-transparent">
+            {/* Brand logo */}
+            <div className="flex-none bg-transparent">
+              <BrandLogo />
+            </div>
+
+            {/* Spacer + nav + contact */}
+            <div className="ml-auto flex items-center gap-x-10 bg-transparent">
+              {menuItems && menuItems.length > 0 && (
+                <MainNavigation menuItems={menuItems} />
+              )}
+              <ContactBox {...contactInfo} />
+            </div>
+          </div>
+        </Container>
+      </header>
+
+      {/* HERO CONTENT */}
       {items && items.length > 0 && (
         <Swiper
           effect="fade"
@@ -47,12 +76,11 @@ export function HeroBaru() {
         >
           {items.map((item, index) => (
             <SwiperSlide key={index}>
-              <div className="relative flex items-center justify-center overflow-hidden py-[9.375rem] lg:min-h-screen">
+              <div className="relative flex min-h-screen items-center justify-center overflow-hidden">
+                {/* Background */}
                 <div
                   className={cn(
-                    'absolute inset-0 -z-1 bg-accent-700 bg-cover bg-no-repeat bg-blend-luminosity',
-                    'before:absolute before:inset-0 before:bg-[#EDF8FE] before:opacity-80 dark:before:bg-accent-900',
-                    'after:absolute after:inset-0 after:[background:linear-gradient(180deg,rgba(255,255,255,0)_0%,#FFFFFF_100%)] dark:after:[background:linear-gradient(180deg,rgba(20,20,22,0.00)_0%,#141416_100%)]',
+                    'absolute inset-0 -z-1 bg-cover bg-center md:bg-cover',
                     styles['hero-bg']
                   )}
                   style={{ backgroundImage: `url(${item.image.src})` }}
@@ -61,38 +89,31 @@ export function HeroBaru() {
                 <Container>
                   <div
                     className={cn(
-                      'relative z-10 mx-auto max-w-[800px] text-center text-accent-900 dark:text-white lg:mt-[60px]',
+                      'relative z-10 px-4 pt-28 text-center text-accent-900 dark:text-white',
                       styles['hero-content']
                     )}
                   >
                     <div className="space-y-6 md:space-y-8">
-                      <h1 className="font-secondary text-lg font-semibold uppercase leading-tight md:text-xl lg:text-2xl">
+                      {/* Judul */}
+                      <h1 className="md:text-6xl lg:text-8xl whitespace-normal text-3xl font-bold leading-tight text-black sm:text-4xl md:whitespace-nowrap">
                         {item.title}
                       </h1>
-                      <p className="text-sm md:text-base lg:text-lg">
-                        PT Transforme Indonesia is the leading provider of
-                        end-to-end information technology solution to business
-                        corporations in Indonesia. Our creative solution
-                        combines the leverage of cutting edge technology and
-                        business process reengineering expertise in exploiting
-                        opportunities to create values to maximize the profit of
-                        our clients.
+
+                      {/* Sub Judul */}
+                      <p className="text-sm text-gray-800 dark:text-gray-200 sm:text-base md:text-lg lg:text-xl">
+                        Solusi Kebutuhan Digital Anda!
                       </p>
-                      <Button asChild className="rounded-full">
+
+                      {/* Tombol */}
+                      <Button
+                        asChild
+                        className="mx-auto rounded-md bg-sky-500 px-4 py-2 text-sm font-semibold text-white hover:bg-sky-600 sm:text-base md:px-6 md:py-3 md:text-lg"
+                      >
                         <CustomLink
                           aria-label={item.button.label}
                           href={item.button.href}
                         >
                           <span>{item.button.label}</span>
-                          <svg
-                            width={28}
-                            height={9}
-                            viewBox="0 0 28 9"
-                            fill="currentColor"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path d="M27.7911 5.02543C27.9863 4.83016 27.9863 4.51358 27.7911 4.31832L24.6091 1.13634C24.4138 0.941077 24.0972 0.941077 23.902 1.13634C23.7067 1.3316 23.7067 1.64818 23.902 1.84345L26.7304 4.67187L23.902 7.5003C23.7067 7.69556 23.7067 8.01214 23.902 8.20741C24.0972 8.40267 24.4138 8.40267 24.6091 8.20741L27.7911 5.02543ZM0.4375 5.17188L27.4375 5.17187L27.4375 4.17187L0.4375 4.17188L0.4375 5.17188Z" />
-                          </svg>
                         </CustomLink>
                       </Button>
                     </div>
