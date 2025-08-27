@@ -62,7 +62,7 @@ export function Footer({ className }: SectionProps) {
     <footer
       id="contact"
       className={cn(
-        'overflow-hidden bg-white text-accent-800 dark:bg-accent-900 dark:text-body',
+        'overflow-hidden bg-white text-accent-800 dark:bg-white dark:text-accent-800',
         className
       )}
     >
@@ -91,7 +91,7 @@ export function Footer({ className }: SectionProps) {
                         key={link.label}
                         className="flex items-center gap-2.5"
                       >
-                        <span className="flex-none text-sm/[1] text-gray-900 dark:text-white">
+                        <span className="flex-none text-sm/[1] text-gray-900 dark:text-gray-900">
                           <FaChevronRight />
                         </span>
                         <CustomLink
@@ -174,7 +174,7 @@ export function Footer({ className }: SectionProps) {
           </div>
         </Container>
       </div>
-      <div className="flex min-h-[90px] items-center border-t border-accent-800 border-opacity-20 py-5 dark:border-body dark:border-opacity-20">
+      <div className="flex min-h-[90px] items-center border-t border-accent-800 border-opacity-20 py-5 dark:border-accent-800 dark:border-opacity-20">
         <Container>
           <div className="flex flex-wrap items-center justify-between gap-x-8 gap-y-4 md:gap-x-10">
             <p>{footerBottom.copyrightText}</p>
