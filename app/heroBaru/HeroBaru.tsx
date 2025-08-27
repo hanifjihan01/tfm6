@@ -89,7 +89,7 @@ export function HeroBaru() {
                 <Container>
                   <div
                     className={cn(
-                      'relative z-10 px-4 pt-28 text-center text-accent-900 dark:text-white',
+                      'relative z-10 px-4 pt-28 text-center text-accent-900 dark:text-accent-900',
                       styles['hero-content']
                     )}
                   >
@@ -100,7 +100,7 @@ export function HeroBaru() {
                       </h1>
 
                       {/* Sub Judul */}
-                      <p className="text-sm text-gray-800 dark:text-gray-200 sm:text-base md:text-lg lg:text-xl">
+                      <p className="text-sm text-gray-800 dark:text-gray-800 sm:text-base md:text-lg lg:text-xl">
                         Solusi Kebutuhan Digital Anda!
                       </p>
 
