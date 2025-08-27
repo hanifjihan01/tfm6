@@ -33,17 +33,18 @@ const serviceData = [
 
 export function OurApproach() {
   return (
-    <section className="py-16">
+    <section className="bg-white py-16">
+      {' '}
+      {/* background jadi putih */}
       {/* Heading */}
       <div className="mb-12 text-center">
-        <h3 className="text-2xl font-bold text-gray-900 md:text-3xl">
+        <h3 className="text-2xl font-bold text-accent-900 md:text-3xl">
           Our Approach
         </h3>
-        <p className="-mt-4 mb-4 text-base text-gray-600 md:text-lg">
+        <p className="-mt-4 mb-4 text-base text-accent-700 md:text-lg">
           Lorem ipsum dolor sit amet consectetur. Orci mattis.
         </p>
       </div>
-
       {/* Grid 2x2 */}
       <div className="container mx-auto grid grid-cols-1 gap-8 px-6 sm:grid-cols-2">
         {serviceData.map((item) => (

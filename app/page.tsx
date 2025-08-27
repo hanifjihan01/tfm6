@@ -27,12 +27,6 @@ export default function Page() {
       </div>
 
       {/* <Hero /> */}
-      <div className="relative">
-        {/* Konten di atas background */}
-        <div className="relative z-10">
-          <br />
-        </div>
-      </div>
 
       <OurApproach />
 
