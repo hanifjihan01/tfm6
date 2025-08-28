@@ -56,7 +56,7 @@ export function AboutSection() {
                 <h4 className="mb-4 text-2xl font-bold text-white">
                   Vision & <br /> Mission
                 </h4>
-                <p className="text-base text-black">{visionMission.vision}</p>
+                <p className="text-base text-white">{visionMission.vision}</p>
               </div>
 
               {/* Desktop layout */}
