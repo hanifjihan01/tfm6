@@ -13,6 +13,9 @@ export function TestimonialCard({
   person: { image, about, name },
   speech,
 }: TestimonialCardProps) {
+  // cek apakah card ini Hugo Adams
+  const isHugo = name === 'Hugo Adams';
+
   return (
     <motion.div
       className="relative flex h-full w-full flex-col items-start overflow-visible"
@@ -27,13 +30,22 @@ export function TestimonialCard({
         whileInView={{ scale: 1, opacity: 1 }}
         transition={{ delay: 0.2, duration: 0.6, ease: 'easeOut' }}
         viewport={{ once: true }}
-        className="relative z-10 flex h-full flex-col justify-between rounded-xl bg-white p-4 text-left sm:p-6"
+        className={`relative z-10 flex h-full flex-col justify-between rounded-xl border p-4 text-left sm:p-6
+          ${
+            isHugo
+              ? 'border-black bg-white text-black'
+              : 'border-white bg-accent-900 text-white'
+          }`}
         style={{
-          boxShadow: '0 8px 30px rgba(0, 0, 0, 0.08)', // shadow custom halus
+          boxShadow: '0 8px 30px rgba(0, 0, 0, 0.08)',
         }}
       >
         {/* Speech */}
-        <p className="text-sm leading-relaxed text-gray-600 sm:text-base">
+        <p
+          className={`text-sm leading-relaxed sm:text-base ${
+            isHugo ? 'text-black' : 'text-white'
+          }`}
+        >
           {speech}
         </p>
 
@@ -49,10 +61,20 @@ export function TestimonialCard({
             className="rounded-full object-cover sm:h-[70px] sm:w-[70px]"
           />
           <div>
-            <h3 className="text-base font-semibold text-gray-900 sm:text-xl">
+            <h3
+              className={`text-base font-semibold sm:text-xl ${
+                isHugo ? 'text-black' : 'text-white'
+              }`}
+            >
               {name}
             </h3>
-            <p className="text-xs text-gray-500 sm:text-base">{about}</p>
+            <p
+              className={`text-xs sm:text-base ${
+                isHugo ? 'text-black' : 'text-white'
+              }`}
+            >
+              {about}
+            </p>
           </div>
         </div>
       </motion.div>

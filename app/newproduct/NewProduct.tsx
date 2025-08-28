@@ -31,56 +31,72 @@ const productData = [
 
 export function NewProducts() {
   return (
-    <section className="bg-white py-16">
+    <section className="bg-accent-900 py-16">
       {/* Heading */}
       <div className="mb-12 text-center">
-        <h2 className="text-2xl font-bold text-accent-900 md:text-3xl">
+        <h2 className="text-2xl font-bold text-white md:text-3xl">
           New Products
         </h2>
-        <p className="mt-2 text-sm text-accent-700 md:text-base">
+        <p className="mt-2 text-sm text-white md:text-base">
           New innovation, best quality than before.
         </p>
-        <p className="mt-1 text-sm text-accent-700 md:text-base">
+        <p className="mt-1 text-sm text-white md:text-base">
           Make every moment flying operation become unforgettable.
         </p>
       </div>
 
       {/* Product Cards */}
       <div className="container mx-auto grid max-w-6xl grid-cols-1 gap-8 px-6 sm:grid-cols-2 md:grid-cols-3">
-        {productData.map((item) => (
-          <div
-            key={item.id}
-            className="flex flex-col overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm transition hover:shadow-lg"
-          >
-            {/* Image */}
-            <div className="relative h-48 w-full">
-              <Image
-                src={item.image}
-                alt={item.title}
-                fill
-                className="object-cover"
-              />
-            </div>
+        {productData.map((item) => {
+          const isDroneLight = item.id === 2;
 
-            {/* Content */}
-            <div className="flex flex-1 flex-col items-center justify-between p-6 text-center">
-              <div>
-                <h3 className="text-lg font-bold text-gray-900 md:text-xl">
-                  {item.title}
-                </h3>
-                <p className="mt-3 text-sm text-gray-700 md:text-base">
-                  {item.description}
-                </p>
+          return (
+            <div
+              key={item.id}
+              className={`flex flex-col overflow-hidden rounded-xl border shadow-sm transition hover:shadow-lg
+                ${isDroneLight ? 'border-black bg-white' : 'border-gray-200 bg-accent-900'}`}
+            >
+              {/* Image */}
+              <div className="relative h-48 w-full">
+                <Image
+                  src={item.image}
+                  alt={item.title}
+                  fill
+                  className="object-cover"
+                />
               </div>
 
-              <button
-                className={`mt-6 rounded-full px-6 py-2 text-sm font-semibold text-white ${item.buttonColor}`}
+              {/* Content */}
+              <div
+                className={`flex flex-1 flex-col items-center justify-between p-6 text-center 
+                  ${isDroneLight ? 'text-black' : 'text-white'}`}
               >
-                GET NOW
-              </button>
+                <div>
+                  <h3
+                    className={`text-lg font-bold md:text-xl ${
+                      isDroneLight ? 'text-black' : 'text-white'
+                    }`}
+                  >
+                    {item.title}
+                  </h3>
+                  <p
+                    className={`mt-3 text-sm md:text-base ${
+                      isDroneLight ? 'text-black' : 'text-white'
+                    }`}
+                  >
+                    {item.description}
+                  </p>
+                </div>
+
+                <button
+                  className={`mt-6 rounded-full px-6 py-2 text-sm font-semibold text-white ${item.buttonColor}`}
+                >
+                  GET NOW
+                </button>
+              </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
     </section>
   );

@@ -32,17 +32,17 @@ export function AboutSection() {
   return (
     <section
       id="about-us"
-      className="section-padding-primary overflow-hidden bg-white"
+      className="section-padding-primary overflow-hidden bg-accent-900"
     >
       <Container>
         <div className="mx-auto w-full max-w-7xl">
           {/* About Us */}
           {vissionMission?.vision && (
             <div className="flex flex-col md:flex-row md:items-start md:gap-6">
-              <h4 className="shrink-0 text-2xl font-bold text-black md:text-2xl">
+              <h4 className="shrink-0 text-2xl font-bold text-white md:text-2xl">
                 About Us
               </h4>
-              <p className="text-base text-black md:text-lg">
+              <p className="text-base text-white md:text-lg">
                 {vissionMission.vision}
               </p>
             </div>
@@ -53,7 +53,7 @@ export function AboutSection() {
             <div className="mt-10 md:mt-16">
               {/* Mobile layout */}
               <div className="flex flex-col items-center text-center md:hidden">
-                <h4 className="mb-4 text-2xl font-bold text-black">
+                <h4 className="mb-4 text-2xl font-bold text-white">
                   Vision & <br /> Mission
                 </h4>
                 <p className="text-base text-black">{visionMission.vision}</p>
@@ -61,10 +61,10 @@ export function AboutSection() {
 
               {/* Desktop layout */}
               <div className="hidden md:flex md:flex-row md:items-start md:gap-6">
-                <p className="flex-1 text-base text-black md:text-lg">
+                <p className="flex-1 text-base text-white md:text-lg">
                   {visionMission.vision}
                 </p>
-                <h4 className="min-w-[200px] text-right text-2xl font-bold text-black md:text-2xl">
+                <h4 className="min-w-[200px] text-right text-2xl font-bold text-white md:text-2xl">
                   <div className="-mt-5 mr-28">Vision &</div>
                   <div className="-mt-7 mr-28">Mission</div>
                 </h4>
